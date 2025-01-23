@@ -1,39 +1,63 @@
-FROM node:20-alpine as base
+# *****************************************************************************
+# BASE IMAGE: Use Ubuntu as the base image
+# *****************************************************************************
+FROM ubuntu:20.04 as base
 
-RUN apt update && apt install nano -y 
+# Avoid interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update and install required tools
+RUN apt-get update && apt-get install -y \
+    nano \
+    curl \
+    gnupg \
+    build-essential \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # *****************************************************************************
 # STAGE 1: Build the project
 # *****************************************************************************
 FROM base AS builder
-RUN apk add --no-cache libc6-compat
+
 # Set working directory
 WORKDIR /app
 
+# Install Yarn
+RUN npm install -g yarn
+
+# Install Turbo globally
 RUN yarn global add turbo
+
+# Copy source code
 COPY . .
 
+# Prune dependencies
+RUN yarn install --network-timeout 500000
 RUN turbo prune --scope=web --docker
 
 # *****************************************************************************
 # STAGE 2: Install dependencies & build the project
 # *****************************************************************************
-# Add lockfile and package.json's of isolated subworkspace
 FROM base AS installer
 
-RUN apk add --no-cache libc6-compat
+# Set working directory
 WORKDIR /app
 
-# First install the dependencies (as they change less often)
-COPY .gitignore .gitignore
+# Copy lockfile and package.json from the builder stage
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/yarn.lock ./yarn.lock
+
+# Install dependencies
 RUN yarn install --network-timeout 500000
 
-# Build the project
+# Copy the full project from the builder stage
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
 
+# Set environment variables
 ARG NEXT_PUBLIC_API_BASE_URL=""
 ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
 
@@ -61,23 +85,27 @@ ENV NEXT_PUBLIC_WEB_BASE_URL=$NEXT_PUBLIC_WEB_BASE_URL
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV TURBO_TELEMETRY_DISABLED 1
 
+# Build the project
 RUN yarn turbo run build --filter=web
 
 # *****************************************************************************
 # STAGE 3: Copy the project and start it
 # *****************************************************************************
 FROM base AS runner
+
+# Set working directory
 WORKDIR /app
 
+# Copy production build files
 COPY --from=installer /app/web/next.config.js .
 COPY --from=installer /app/web/package.json .
 
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
+# Copy standalone output and public files
 COPY --from=installer /app/web/.next/standalone ./
 COPY --from=installer /app/web/.next ./web/.next
 COPY --from=installer /app/web/public ./web/public
 
+# Set environment variables again
 ARG NEXT_PUBLIC_API_BASE_URL=""
 ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
 
@@ -105,4 +133,8 @@ ENV NEXT_PUBLIC_WEB_BASE_URL=$NEXT_PUBLIC_WEB_BASE_URL
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV TURBO_TELEMETRY_DISABLED 1
 
+# Expose the application port
 EXPOSE 3000
+
+# Start the application
+CMD ["node", "server.js"]
