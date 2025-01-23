@@ -58,7 +58,7 @@ x-app-env: &app-env
 
 services:
   web:
-    image: ${DOCKERHUB_USER:-makeplane}/plane-frontend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-nexixsecuritylabs}/plane-frontend:${APP_RELEASE:-stable}
     platform: ${DOCKER_PLATFORM:-}
     pull_policy: if_not_present
     restart: unless-stopped
@@ -70,7 +70,7 @@ services:
       - worker
 
   space:
-    image: ${DOCKERHUB_USER:-makeplane}/plane-space:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-nexixsecuritylabs}/plane-space:${APP_RELEASE:-stable}
     platform: ${DOCKER_PLATFORM:-}
     pull_policy: if_not_present
     restart: unless-stopped
@@ -83,7 +83,7 @@ services:
       - web
 
   admin:
-    image: ${DOCKERHUB_USER:-makeplane}/plane-admin:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-nexixsecuritylabs}/plane-admin:${APP_RELEASE:-stable}
     platform: ${DOCKER_PLATFORM:-}
     pull_policy: if_not_present
     restart: unless-stopped
@@ -95,7 +95,7 @@ services:
       - web
 
   live:
-    image: ${DOCKERHUB_USER:-makeplane}/plane-live:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-nexixsecuritylabs}/plane-live:${APP_RELEASE:-stable}
     platform: ${DOCKER_PLATFORM:-}
     pull_policy: if_not_present
     restart: unless-stopped
@@ -109,7 +109,7 @@ services:
       - web
 
   api:
-    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-nexixsecuritylabs}/plane-backend:${APP_RELEASE:-stable}
     platform: ${DOCKER_PLATFORM:-}
     pull_policy: if_not_present
     restart: unless-stopped
@@ -126,7 +126,7 @@ services:
       - plane-mq
 
   worker:
-    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-nexixsecuritylabs}/plane-backend:${APP_RELEASE:-stable}
     platform: ${DOCKER_PLATFORM:-}
     pull_policy: if_not_present
     restart: unless-stopped
@@ -142,7 +142,7 @@ services:
       - plane-mq
 
   beat-worker:
-    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-nexixsecuritylabs}/plane-backend:${APP_RELEASE:-stable}
     platform: ${DOCKER_PLATFORM:-}
     pull_policy: if_not_present
     restart: unless-stopped
@@ -158,7 +158,7 @@ services:
       - plane-mq
 
   migrator:
-    image: ${DOCKERHUB_USER:-makeplane}/plane-backend:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-nexixsecuritylabs}/plane-backend:${APP_RELEASE:-stable}
     platform: ${DOCKER_PLATFORM:-}
     pull_policy: if_not_present
     restart: "no"
@@ -208,7 +208,7 @@ services:
 
   # Comment this if you already have a reverse proxy running
   proxy:
-    image: ${DOCKERHUB_USER:-makeplane}/plane-proxy:${APP_RELEASE:-stable}
+    image: ${DOCKERHUB_USER:-nexixsecuritylabs}/plane-proxy:${APP_RELEASE:-stable}
     platform: ${DOCKER_PLATFORM:-}
     pull_policy: if_not_present
     restart: unless-stopped
