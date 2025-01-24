@@ -117,13 +117,13 @@ export const GeneralConfigurationForm: FC<IGeneralConfigurationForm> = observer(
             </div>
             <div className="grow">
               <div className="text-sm font-medium text-custom-text-100 leading-5">
-                Let Plane collect anonymous usage data
+                Let Nexio collect anonymous usage data
               </div>
               <div className="text-xs font-normal text-custom-text-300 leading-5">
-                No PII is collected.This anonymized data is used to understand how you use Plane and build new features
+                No PII is collected.This anonymized data is used to understand how you use Nexio and build new features
                 in line with{" "}
                 <a
-                  href="https://docs.plane.so/self-hosting/telemetry"
+                  href="#"
                   target="_blank"
                   className="text-custom-primary-100 hover:underline"
                   rel="noreferrer"

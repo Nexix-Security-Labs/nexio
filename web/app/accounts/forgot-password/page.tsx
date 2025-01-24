@@ -100,18 +100,18 @@ export default function ForgotPasswordPage() {
           <Image
             src={resolvedTheme === "dark" ? PlaneBackgroundPatternDark : PlaneBackgroundPattern}
             className="w-full h-full object-cover"
-            alt="Plane background pattern"
+            alt="Nexio background pattern"
           />
         </div>
         <div className="relative z-10 w-screen h-screen overflow-hidden overflow-y-auto flex flex-col">
           <div className="container min-w-full px-10 lg:px-20 xl:px-36 flex-shrink-0 relative flex items-center justify-between pb-4 transition-all">
             <div className="flex items-center gap-x-2 py-10">
               <Link href={`/`} className="h-[30px] w-[133px]">
-                <Image src={logo} alt="Plane logo" />
+                <Image src={logo} alt="Nexio logo" />
               </Link>
             </div>
             <div className="flex flex-col items-end sm:items-center sm:gap-2 sm:flex-row text-center text-sm font-medium text-onboarding-text-300">
-              New to Plane?{" "}
+              New to Nexio?{" "}
               <Link
                 href="/"
                 onClick={() => captureEvent(NAVIGATE_TO_SIGNUP, {})}

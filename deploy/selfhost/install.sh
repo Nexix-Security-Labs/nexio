@@ -2,12 +2,12 @@
 
 BRANCH=${BRANCH:-master}
 SCRIPT_DIR=$PWD
-SERVICE_FOLDER=plane-app
+SERVICE_FOLDER=nexio-app
 PLANE_INSTALL_DIR=$PWD/$SERVICE_FOLDER
 export APP_RELEASE=stable
-export DOCKERHUB_USER=makeplane
+export DOCKERHUB_USER=nexixsecuritylabs
 export PULL_POLICY=${PULL_POLICY:-if_not_present}
-export GH_REPO=makeplane/plane
+export GH_REPO=Nexix-Security-Labs/nexio
 export RELEASE_DOWNLOAD_URL="https://github.com/$GH_REPO/releases/download"
 export FALLBACK_DOWNLOAD_URL="https://raw.githubusercontent.com/$GH_REPO/$BRANCH/deploy/selfhost"
 
@@ -24,12 +24,12 @@ clear
 
 cat <<"EOF"
 --------------------------------------------
- ____  _                          ///////// 
-|  _ \| | __ _ _ __   ___         ///////// 
-| |_) | |/ _` | '_ \ / _ \   /////    ///// 
-|  __/| | (_| | | | |  __/   /////    ///// 
-|_|   |_|\__,_|_| |_|\___|        ////      
-                                  ////      
+ ____  _                          /////////
+|  _ \| | __ _ _ __   ___         /////////
+| |_) | |/ _` | '_ \ / _ \   /////    /////
+|  __/| | (_| | | | |  __/   /////    /////
+|_|   |_|\__,_|_| |_|\___|        ////
+                                  ////
 --------------------------------------------
 Project management tool from the future
 --------------------------------------------
@@ -41,11 +41,11 @@ function spinner() {
     local delay=.5
     local spinstr='|/-\'
 
-    if ! ps -p "$pid" > /dev/null; then  
-        echo "Invalid PID: $pid"  
-        return 1  
-    fi  
-    while ps -p "$pid" > /dev/null; do  
+    if ! ps -p "$pid" > /dev/null; then
+        echo "Invalid PID: $pid"
+        return 1
+    fi
+    while ps -p "$pid" > /dev/null; do
         local temp=${spinstr#?}
         printf " [%c]  " "$spinstr" >&2
         local spinstr=$temp${spinstr%"$temp"}
@@ -63,7 +63,7 @@ function checkLatestRelease(){
         exit 1
     fi
 
-    echo $latest_release    
+    echo $latest_release
 }
 
 function initialize(){
@@ -77,12 +77,12 @@ function initialize(){
         return 1
     fi
 
-    local IMAGE_NAME=makeplane/plane-proxy
+    local IMAGE_NAME=nexixsecuritylabs/plane-proxy
     local IMAGE_TAG=${APP_RELEASE}
     docker manifest inspect "${IMAGE_NAME}:${IMAGE_TAG}" | grep -q "\"architecture\": \"${CPU_ARCH}\"" &
     local pid=$!
     spinner "$pid"
-    
+
     echo "" >&2
 
     wait "$pid"
@@ -136,7 +136,7 @@ function updateEnvFile() {
         if [ $? -ne 0 ]; then
             echo "$key=$value" >> "$file"
             return
-        else 
+        else
             if [ "$OS_NAME" == "Darwin" ]; then
                 value=$(echo "$value" | sed 's/|/\\|/g')
                 sed -i '' "s|^$key=.*|$key=$value|g" "$file"
@@ -163,7 +163,7 @@ function syncEnvFile(){
     echo "Syncing environment variables..." >&2
     if [ -f "$PLANE_INSTALL_DIR/plane.env.bak" ]; then
         updateCustomVariables
-        
+
         # READ keys of plane.env and update the values from plane.env.bak
         while IFS= read -r line
         do
@@ -184,8 +184,8 @@ function syncEnvFile(){
 function buildYourOwnImage(){
     echo "Building images locally..."
 
-    export DOCKERHUB_USER="myplane"
-    export APP_RELEASE="local"
+    export DOCKERHUB_USER="nexixsecuritylabs"
+    export APP_RELEASE="stable"
     export PULL_POLICY="never"
     CUSTOM_BUILD="true"
 
@@ -326,7 +326,7 @@ function download() {
             exit 1
         fi
     fi
-    
+
     echo ""
     echo "Most recent version of Plane is now available for you to use"
     echo ""
@@ -369,7 +369,7 @@ function startServices() {
     while ! docker logs $api_container_id 2>&1 | grep -m 1 -i "Application startup complete" | grep -q ".";
     do
         local message=">> Waiting for API Service to Start"
-        local dots=$(printf '%*s' $idx2 | tr ' ' '.')    
+        local dots=$(printf '%*s' $idx2 | tr ' ' '.')
         echo -ne "\r$message$dots"
         ((idx2++))
         sleep 1
@@ -440,7 +440,7 @@ function viewSpecificLogs(){
     /bin/bash -c "$COMPOSE_CMD -f $DOCKER_FILE_PATH logs -f $SERVICE_NAME"
 }
 function viewLogs(){
-    
+
     ARG_SERVICE_NAME=$2
 
     if [ -z "$ARG_SERVICE_NAME" ];
@@ -458,7 +458,7 @@ function viewLogs(){
         echo "   9) Postgres"
         echo "   10) Minio"
         echo "   0) Back to Main Menu"
-        echo 
+        echo
         read -p "Service: " DOCKER_SERVICE_NAME
 
         until (( DOCKER_SERVICE_NAME >= 0 && DOCKER_SERVICE_NAME <= 10 )); do
@@ -558,7 +558,7 @@ function askForAction() {
         echo "   6) View Logs"
         echo "   7) Backup Data"
         echo "   8) Exit"
-        echo 
+        echo
         read -p "Action [2]: " ACTION
         until [[ -z "$ACTION" || "$ACTION" =~ ^[1-8]$ ]]; do
             echo "$ACTION: invalid selection."

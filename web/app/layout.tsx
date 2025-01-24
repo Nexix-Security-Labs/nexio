@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nexio | Simple, extensible, project management tool.",
     description:
-      "project management tool to manage issues, sprints, and product roadmaps with peace of mind.",
+      "Project management tool to manage issues, sprints, and product roadmaps with peace of mind.",
     url: "#",
   },
   keywords:

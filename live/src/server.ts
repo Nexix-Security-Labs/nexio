@@ -97,7 +97,7 @@ Sentry.setupExpressErrorHandler(app);
 app.use(errorHandler);
 
 const liveServer = app.listen(app.get("port"), () => {
-  manualLogger.info(`Plane Live server has started at port ${app.get("port")}`);
+  manualLogger.info(`Nexio Live server has started at port ${app.get("port")}`);
 });
 
 const gracefulShutdown = async () => {

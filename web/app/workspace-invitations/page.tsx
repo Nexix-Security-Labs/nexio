@@ -92,14 +92,14 @@ const WorkspaceInvitationPage = observer(() => {
           invitationDetail?.accepted ? (
             <EmptySpace
               title={`You are already a member of ${invitationDetail.workspace.name}`}
-              description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Plane account."
+              description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Nexio account."
             >
               <EmptySpaceItem Icon={Boxes} title="Continue to home" href="/" />
             </EmptySpace>
           ) : (
             <EmptySpace
               title="This invitation link is not active anymore."
-              description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Plane account."
+              description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Nexio account."
               link={{ text: "Or start from an empty project", href: "/" }}
             >
               {!currentUser ? (
@@ -107,12 +107,6 @@ const WorkspaceInvitationPage = observer(() => {
               ) : (
                 <EmptySpaceItem Icon={Boxes} title="Continue to home" href="/" />
               )}
-              <EmptySpaceItem Icon={Star} title="Star us on GitHub" href="#" />
-              <EmptySpaceItem
-                Icon={Share2}
-                title="Join our community of active creators"
-                href="#"
-              />
             </EmptySpace>
           )
         ) : (
