@@ -7,12 +7,12 @@ import "@/styles/globals.css";
 import { AppProvider } from "./provider";
 
 export const metadata: Metadata = {
-  title: "Plane Publish | Make your Plane boards public with one-click",
-  description: "Plane Publish is a customer feedback management tool built on top of plane.so",
+  title: "Nexio Publish | Make your Nexio boards public with one-click",
+  description: "Nexio Publish is a customer feedback management tool built on top of nexio",
   openGraph: {
-    title: "Plane Publish | Make your Plane boards public with one-click",
-    description: "Plane Publish is a customer feedback management tool built on top of plane.so",
-    url: "https://sites.plane.so/",
+    title: "Nexio Publish | Make your Nexio boards public with one-click",
+    description: "Nexio Publish is a customer feedback management tool built on top of nexio",
+    url: "https://nexio.nexixsecuritylabs.com/",
   },
   keywords:
     "software development, customer feedback, software, accelerate, code management, release management, project management, issue tracking, agile, scrum, kanban, collaboration",

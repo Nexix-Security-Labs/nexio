@@ -27,7 +27,7 @@ export const PoweredBy: FC<TPoweredBy> = (props) => {
         <Image src={planeLogo} alt="Plane logo" className="h-6 w-6" height="24" width="24" />
       </div>
       <div className="text-xs">
-        Powered by <span className="font-semibold">Plane Publish</span>
+        Powered by <span className="font-semibold">Nexio Publish</span>
       </div>
     </a>
   );

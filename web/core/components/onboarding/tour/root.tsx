@@ -40,7 +40,7 @@ const TOUR_STEPS: {
     key: "issues",
     title: "Plan with issues",
     description:
-      "The issue is the building block of the Plane. Most concepts in Plane are either associated with issues and their properties.",
+      "The issue is the building block of the Nexio. Most concepts in Nexio are either associated with issues and their properties.",
     image: IssuesTour,
     nextStep: "cycles",
   },
@@ -101,10 +101,10 @@ export const TourRoot: React.FC<Props> = observer((props) => {
             </div>
             <div className="flex h-2/5 flex-col overflow-y-auto p-6">
               <h3 className="font-semibold sm:text-xl">
-                Welcome to Plane, {currentUser?.first_name} {currentUser?.last_name}
+                Welcome to Nexio, {currentUser?.first_name} {currentUser?.last_name}
               </h3>
               <p className="mt-3 text-sm text-custom-text-200">
-                We{"'"}re glad that you decided to try out Plane. You can now manage your projects with ease. Get
+                We{"'"}re glad that you decided to try out Nexio. You can now manage your projects with ease. Get
                 started by creating a project.
               </p>
               <div className="flex h-full items-end">

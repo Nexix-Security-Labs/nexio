@@ -31,7 +31,7 @@ export const PasswordStrengthMeter: FC<TPasswordStrengthMeter> = (props) => {
       case E_PASSWORD_STRENGTH.LENGTH_NOT_VALID: {
         return {
           bars: [`bg-red-500`, `bg-custom-text-100`, `bg-custom-text-100`],
-          text: "Password length should me more than 8 characters.",
+          text: "Password length should be more than 8 characters.",
           textColor: "text-red-500",
         };
       }

@@ -284,11 +284,11 @@ export const ProfileSetup: React.FC<Props> = observer((props) => {
             <h3 className="text-3xl font-bold text-onboarding-text-100">
               {isCurrentStepUserPersonalization
                 ? `Looking good${user?.first_name && `, ${user.first_name}`}!`
-                : "Welcome to Plane!"}
+                : "Welcome to Nexio!"}
             </h3>
             <p className="font-medium text-onboarding-text-400">
               {isCurrentStepUserPersonalization
-                ? "Let’s personalize Plane for you."
+                ? "Let’s personalize Nexio for you."
                 : "Let’s setup your profile, tell us a bit about yourself."}
             </p>
           </div>
