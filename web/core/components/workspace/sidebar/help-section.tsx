@@ -80,7 +80,7 @@ export const SidebarHelpSection: React.FC<WorkspaceHelpSectionProps> = observer(
           >
             <CustomMenu.MenuItem>
               <a
-                href="https://go.plane.so/p-docs"
+                href="#"
                 target="_blank"
                 className="flex items-center justify- gap-x-2 rounded text-xs hover:bg-custom-background-80"
               >
@@ -102,7 +102,7 @@ export const SidebarHelpSection: React.FC<WorkspaceHelpSectionProps> = observer(
             )}
             <CustomMenu.MenuItem>
               <a
-                href="mailto:sales@plane.so"
+                href="mailto:support-nexio@nexixsecuritylabs.com"
                 target="_blank"
                 className="flex items-center justify- gap-x-2 rounded text-xs hover:bg-custom-background-80"
               >
@@ -135,7 +135,7 @@ export const SidebarHelpSection: React.FC<WorkspaceHelpSectionProps> = observer(
                 <span className="text-xs">{t("keyboard_shortcuts")}</span>
               </button>
             </CustomMenu.MenuItem>
-            <CustomMenu.MenuItem>
+            {/* <CustomMenu.MenuItem>
               <button
                 type="button"
                 onClick={() => setProductUpdatesModalOpen(true)}
@@ -143,10 +143,10 @@ export const SidebarHelpSection: React.FC<WorkspaceHelpSectionProps> = observer(
               >
                 <span className="text-xs">{t("whats_new")}</span>
               </button>
-            </CustomMenu.MenuItem>
+            </CustomMenu.MenuItem> */}
             <CustomMenu.MenuItem>
               <a
-                href="https://go.plane.so/p-discord"
+                href="#"
                 target="_blank"
                 className="flex items-center justify- gap-x-2 rounded text-xs hover:bg-custom-background-80"
               >
