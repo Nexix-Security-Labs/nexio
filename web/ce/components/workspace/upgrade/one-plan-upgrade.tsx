@@ -12,13 +12,13 @@ export type OnePlanUpgradeProps = {
 export const OnePlanUpgrade: FC<OnePlanUpgradeProps> = (props) => {
   const { features, verticalFeatureList = false, extraFeatures } = props;
   // env
-  const PLANE_ONE_PAYMENT_URL = "https://prime.plane.so/";
+  const PLANE_ONE_PAYMENT_URL = "#";
 
   return (
     <div className="py-4 px-2 border border-custom-border-90 rounded-xl bg-custom-background-90">
       <div className="flex w-full justify-center h-10" />
       <div className="pt-6 pb-4 text-center font-semibold">
-        <div className="text-2xl">Plane One</div>
+        <div className="text-2xl">Nexio One</div>
         <div className="text-3xl">$799</div>
         <div className="text-sm text-custom-text-300">for two years’ support and updates</div>
       </div>

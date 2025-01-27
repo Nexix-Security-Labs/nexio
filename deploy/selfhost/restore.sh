@@ -62,7 +62,7 @@ function restoreData() {
     dockerServicePrefix="running"
 
     if [[ $dockerServiceStatus == $dockerServicePrefix* ]]; then
-        echo "Plane App is running. Please STOP the Plane App before restoring data."
+        echo "Nexio App is running. Please STOP the Nexio App before restoring data."
         exit 1
     fi
 

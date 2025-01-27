@@ -1,5 +1,5 @@
 #!/bin/sh
 set -x
 
-echo "Starting Plane Frontend.."
+echo "Starting Nexio Frontend.."
 node $1

@@ -19,11 +19,11 @@ export const WEB_BASE_PATH = process.env.NEXT_PUBLIC_WEB_BASE_PATH || "/";
 export const WEB_URL = encodeURI(`${WEB_BASE_URL}${WEB_BASE_PATH}`);
 // plane website url
 export const WEBSITE_URL =
-  process.env.NEXT_PUBLIC_WEBSITE_URL || "https://plane.so";
+  process.env.NEXT_PUBLIC_WEBSITE_URL || "#";
 // support email
 export const SUPPORT_EMAIL =
-  process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support@plane.so";
+  process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support-nexio@nexixsecuritylabs.com";
 // marketing links
-export const MARKETING_PRICING_PAGE_LINK = "https://plane.so/pricing";
-export const MARKETING_CONTACT_US_PAGE_LINK = "https://plane.so/contact";
-export const MARKETING_PLANE_ONE_PAGE_LINK = "https://plane.so/one";
+export const MARKETING_PRICING_PAGE_LINK = "#";
+export const MARKETING_CONTACT_US_PAGE_LINK = "#";
+export const MARKETING_PLANE_ONE_PAGE_LINK = "#";

@@ -73,7 +73,7 @@ export const DeleteApiTokenModal: FC<Props> = (props) => {
       title="Delete API token"
       content={
         <>
-          Any application using this token will no longer have the access to Plane data. This action cannot be undone.
+          Any application using this token will no longer have the access to Nexio data. This action cannot be undone.
         </>
       }
     />

@@ -34,19 +34,19 @@ export const CommandPaletteHelpActions: React.FC<Props> = observer((props) => {
       <Command.Item
         onSelect={() => {
           closePalette();
-          window.open("https://docs.plane.so/", "_blank");
+          window.open("#", "_blank");
         }}
         className="focus:outline-none"
       >
         <div className="flex items-center gap-2 text-custom-text-200">
           <FileText className="h-3.5 w-3.5" />
-          Open Plane documentation
+          Open Nexio documentation
         </div>
       </Command.Item>
       <Command.Item
         onSelect={() => {
           closePalette();
-          window.open("https://discord.com/invite/A92xrEGCge", "_blank");
+          window.open("#", "_blank");
         }}
         className="focus:outline-none"
       >
@@ -58,7 +58,7 @@ export const CommandPaletteHelpActions: React.FC<Props> = observer((props) => {
       <Command.Item
         onSelect={() => {
           closePalette();
-          window.open("https://github.com/makeplane/plane/issues/new/choose", "_blank");
+          window.open("#", "_blank");
         }}
         className="focus:outline-none"
       >

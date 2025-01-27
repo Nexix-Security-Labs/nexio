@@ -18,17 +18,17 @@ import packageJson from "package.json";
 const helpOptions = [
   {
     name: "Documentation",
-    href: "https://docs.plane.so/",
+    href: "#",
     Icon: FileText,
   },
   {
     name: "Join our Discord",
-    href: "https://discord.com/invite/A92xrEGCge",
+    href: "#",
     Icon: DiscordIcon,
   },
   {
     name: "Report a bug",
-    href: "https://github.com/makeplane/plane/issues/new/choose",
+    href: "https://nsl-assetsecure-support.zapier.app/",
     Icon: GithubIcon,
   },
 ];
@@ -53,13 +53,13 @@ export const HelpSection: FC = observer(() => {
       )}
     >
       <div className={`flex items-center gap-1 ${isSidebarCollapsed ? "flex-col justify-center" : "w-full"}`}>
-        <Tooltip tooltipContent="Redirect to Plane" position="right" className="ml-4" disabled={!isSidebarCollapsed}>
+        <Tooltip tooltipContent="Redirect to Nexio" position="right" className="ml-4" disabled={!isSidebarCollapsed}>
           <a
             href={redirectionLink}
             className={`relative px-2 py-1.5 flex items-center gap-2 font-medium rounded border border-custom-primary-100/20 bg-custom-primary-100/10 text-xs text-custom-primary-200 whitespace-nowrap`}
           >
             <ExternalLink size={14} />
-            {!isSidebarCollapsed && "Redirect to Plane"}
+            {!isSidebarCollapsed && "Redirect to Nexio"}
           </a>
         </Tooltip>
         <Tooltip tooltipContent="Help" position={isSidebarCollapsed ? "right" : "top"} className="ml-4">

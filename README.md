@@ -5,8 +5,8 @@
   <img src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_logo_.webp" alt="Plane Logo" width="70">
 </a>
 </p>
-<h1 align="center"><b>Plane</b></h1>
-<p align="center"><b>Open-source project management that unlocks customer value</b></p>
+<h1 align="center"><b>Nexio</b></h1>
+<p align="center"><b>Project management that unlocks customer value</b></p>
 
 <p align="center">
 <a href="https://discord.com/invite/A92xrEGCge">

@@ -1,7 +1,7 @@
 {
   "name": "@plane/editor",
-  "version": "0.24.1",
-  "description": "Core Editor that powers Plane",
+  "version": "1.24.1",
+  "description": "Core Editor that powers Nexio",
   "private": true,
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",

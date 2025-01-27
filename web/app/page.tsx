@@ -53,7 +53,7 @@ const HomePage = observer(() => {
                   </Link>
                 </div>
                 <div className="flex flex-col items-end sm:items-center sm:gap-2 sm:flex-row text-center text-sm font-medium text-onboarding-text-300">
-                  New to Plane?{" "}
+                  New to Nexio?{" "}
                   <Link
                     href="/sign-up"
                     onClick={() => captureEvent(NAVIGATE_TO_SIGNUP, {})}

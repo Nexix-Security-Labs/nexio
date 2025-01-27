@@ -146,7 +146,7 @@ export const CreateWorkspace: React.FC<Props> = observer((props) => {
       <div className="text-center space-y-1 py-4 mx-auto">
         <h3 className="text-3xl font-bold text-onboarding-text-100">Create a workspace</h3>
         <p className="font-medium text-onboarding-text-400">
-          To start using Plane, you need to create or join a workspace.
+          To start using Nexio, you need to create or join a workspace.
         </p>
       </div>
       <form className="w-full mx-auto mt-2 space-y-4" onSubmit={handleSubmit(handleCreateWorkspace)}>

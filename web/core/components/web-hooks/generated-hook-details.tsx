@@ -21,7 +21,7 @@ export const GeneratedHookDetails: React.FC<Props> = (props) => {
         <div className="space-y-3">
           <h3 className="text-xl font-medium text-custom-text-200">Key created</h3>
           <p className="text-sm text-custom-text-400">
-            Copy and save this secret key in Plane Pages. You can{"'"}t see this key after you hit Close. A CSV file
+            Copy and save this secret key in Nexio Pages. You can{"'"}t see this key after you hit Close. A CSV file
             containing the key has been downloaded.
           </p>
         </div>
