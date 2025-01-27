@@ -45,13 +45,13 @@ export const SidebarWorkspaceMenu = observer(() => {
       access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER, EUserWorkspaceRoles.GUEST],
       Icon: Layers,
     },
-    {/* {
+    {
       key: "active-cycles",
       labelTranslationKey: "cycles",
       href: `/${workspaceSlug}/active-cycles/`,
       access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER],
       Icon: ContrastIcon,
-    }, */},
+    },
     {
       key: "analytics",
       labelTranslationKey: "analytics",
