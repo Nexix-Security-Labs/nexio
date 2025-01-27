@@ -51,7 +51,7 @@ export const SidebarWorkspaceMenu = observer(() => {
       href: `/${workspaceSlug}/active-cycles/`,
       access: [EUserWorkspaceRoles.ADMIN, EUserWorkspaceRoles.MEMBER],
       Icon: ContrastIcon,
-    }, */}
+    }, */},
     {
       key: "analytics",
       labelTranslationKey: "analytics",
