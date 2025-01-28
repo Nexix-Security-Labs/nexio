@@ -55,7 +55,7 @@ export const PaidPlanUpgradeModal: FC<PaidPlanUpgradeModalProps> = (props) => {
               </p>
             </div>
             {/* Free plan details */}
-            <div className="py-4 px-2 border border-custom-border-90 rounded-xl">
+            {/* <div className="py-4 px-2 border border-custom-border-90 rounded-xl">
               <div className="py-2 px-3">
                 <span className="px-2 py-1 bg-custom-background-90 text-sm text-custom-text-300 font-medium rounded">
                   Your plan
@@ -77,7 +77,7 @@ export const PaidPlanUpgradeModal: FC<PaidPlanUpgradeModalProps> = (props) => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="col-span-12 md:col-span-4">
             <ProPlanUpgrade
