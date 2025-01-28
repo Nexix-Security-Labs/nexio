@@ -1,6 +1,6 @@
 {
   "name": "live",
-  "version": "0.24.1",
+  "version": "1.24.1",
   "description": "",
   "main": "./src/server.ts",
   "private": true,
